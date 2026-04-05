@@ -1,5 +1,5 @@
 """
-ÐÐ¾Ð½ÑÐ¸Ð³ÑÑÐ°ÑÐ¸Ñ Ð´Ð»Ñ Telegram-Ð±Ð¾ÑÐ° ÑÑÑÑÐºÐ¾Ð³Ð¾ ÑÐ·ÑÐºÐ°
+Конфигурация для Telegram-бота русского языка
 Configuration for Russian language tutor bot
 """
 
@@ -14,14 +14,14 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 # Database
 DATABASE_PATH = os.getenv("DATABASE_PATH", "student_bot.db")
 
-# Subscription prices (Ð² Ð´Ð¾Ð»Ð»Ð°ÑÐ°Ñ USD, ÐºÐ¾Ð½Ð²ÐµÑÑÐ¸ÑÑÑÑÑÑ Ð² ÑÑÐ±Ð»Ð¸)
+# Subscription prices (в долларах USD)
 SUBSCRIPTION_PRICES = {
     "free": 0,
     "premium": 5,
     "pro": 10
 }
 
-# Features Ð¿Ð¾ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÐµ
+# Features по подписке
 SUBSCRIPTION_FEATURES = {
     "free": {
         "daily_exercises": 1,
@@ -57,11 +57,14 @@ DAILY_EXERCISE_HOUR = int(os.getenv("DAILY_EXERCISE_HOUR", "9"))
 DAILY_EXERCISE_MINUTE = int(os.getenv("DAILY_EXERCISE_MINUTE", "0"))
 TIMEZONE = os.getenv("TIMEZONE", "Europe/Moscow")
 
-# Admin IDs (ÑÐ¿Ð¸ÑÐ¾Ðº ID Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑÑÐ°ÑÐ¾ÑÐ¾Ð²)
+# Количество упражнений в ежедневной серии (можно менять в Railway → Variables)
+DAILY_EXERCISE_COUNT = int(os.getenv("DAILY_EXERCISE_COUNT", "5"))
+
+# Admin IDs (список ID администраторов)
 ADMIN_IDS = [int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()]
 
 # Referral system
-REFERRAL_DAYS = 7  # Ð±ÐµÑÐ¿Ð»Ð°ÑÐ½ÑÑ Ð´Ð½ÐµÐ¹ Ð·Ð° ÑÐµÑÐµÑÐ°Ð»Ð°
+REFERRAL_DAYS = 7  # бесплатных дней за реферала
 
 # Database backup path
 BACKUP_PATH = os.getenv("BACKUP_PATH", "backups/")
